@@ -41,6 +41,15 @@ if(empty($error))
             {
                 $_SESSION["name"] = $row["name"];
                 $_SESSION["user_id"] = $row["id"];
+                $vote_query = "SELECT * FROM votes WHERE voter_id = :id";
+                $vote_statement = $connect->prepare($vote_query);
+                $vote_data[':id'] = $_SESSION["user_id"];
+                if($vote_statement->execute($vote_data))
+                {
+                    $vote_result = $vote_statement->fetchAll();
+                    if($vote_statement->rowCount() > 0) $_SESSION["voted"] = true;
+                    else  $_SESSION["voted"] = false;
+                }
             }
             else
             {
