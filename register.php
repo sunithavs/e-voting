@@ -27,7 +27,20 @@ else
  }
  else
  {
-    $data[':email'] = $form_data->email;
+    $query = "SELECT * FROM register WHERE email = :email";
+    $statement = $connect->prepare($query);
+    if($statement->execute([':email' => $form_data->email]))
+    {
+        $result = $statement->fetchAll();
+        if($statement->rowCount() > 0)
+        {
+            $error[] = 'Email already exists';
+        }
+        else{
+            $data[':email'] = $form_data->email;
+        }
+    }
+    
  }
 }
 
