@@ -123,7 +123,7 @@ div.total span{
 	display: none
 }
 nav{
-	display: block;
+	display: flex;
 }
 a, a:visited {
 	outline:none;
@@ -141,9 +141,12 @@ a:hover{
 	background-color: #55B460;
 	padding: 10px;
 }
+.logout{
+	margin-top:10px;
+}
 nav{
 	text-align: right;
-	display:inline-block;
+	display:flex !important;
 	background-color:#55B460;
 	box-shadow:0 1px 1px #ccc;
 	border-radius:2px;

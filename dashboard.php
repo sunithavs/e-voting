@@ -11,7 +11,7 @@
 
 	?>
 <div ng-app="voting-app" ng-controller="VotingController">
-	<div ng-show="voting_form">
+<div ng-show="voting_form">
 		<form>			
 			<h1>Electronic Voting System</h1><br>
 			<table class="table table-stripe" >
