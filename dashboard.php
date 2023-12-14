@@ -71,8 +71,8 @@
 	</div>
 	<?php
    }
+   include('footer.php');
 ?>
-		
 <script>
 	var fetch = angular.module('voting-app', []);
 	fetch.controller('VotingController', ['$scope', '$http','$window', function ($scope, $http,$window) {

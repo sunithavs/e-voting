@@ -48,7 +48,6 @@ if(empty($error))
                 {
                     $vote_result = $vote_statement->fetchAll();
                     if($vote_statement->rowCount() > 0) $_SESSION["voted"] = true;
-                    else  $_SESSION["voted"] = false;
                 }
             }
             else

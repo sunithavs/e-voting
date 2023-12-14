@@ -14,6 +14,7 @@ $data[':created_at'] = date('Y-m-d H:i:s');
     $statement = $connect->prepare($query);
     if($statement->execute($data))
     {
+        $_SESSION["voted"] = true;
     $message = 'Thanks for voting!!';
     }
     else{
