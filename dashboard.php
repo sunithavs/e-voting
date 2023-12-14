@@ -5,9 +5,10 @@
 		session_destroy();
 		header("location:index.php");
 	}
-
+    include('menubar.php');
  if(!isset($_SESSION["voted"]))
    {
+
 	?>
 <div ng-app="voting-app" ng-controller="VotingController">
 	<div ng-show="voting_form">
@@ -59,6 +60,10 @@
    }
    else{
 	?>
+	<div class="panel panel-default">
+    <div class="panel-heading">
+     <!-- <h3 class="panel-title">Welcome to system</h3> -->
+    </div>
 	<div>
 		<div class="panel-body">
 		<h1>You are already voted. Thanks for visiting e-voting system</h1>

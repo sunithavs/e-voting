@@ -1,29 +1,10 @@
 <?php
 
-//index.php
-
 session_start();
-
+include('header.php');
+if(isset($_SESSION["name"]))
+    include('menubar.php');
 ?>
-<!DOCTYPE html>
-<html>
- <head>
-  <title>AngularJS Register Login Script using PHP Mysql</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  <style>
-  .form_style
-  {
-   width: 600px;
-   margin: 0 auto;
-  }
-  </style>
- </head>
- <body>
-  <br />
-   <h3 align="center">e-voting system</h3>
-  <br />
-
   <div ng-app="login_register_app" ng-controller="login_register_controller" class="container form_style">
    <?php
    if(!isset($_SESSION["name"]))
@@ -87,6 +68,7 @@ session_start();
    }
    else
    {
+    
    ?>
    <div class="panel panel-default">
     <div class="panel-heading">
@@ -94,7 +76,6 @@ session_start();
     </div>
     <div class="panel-body">
      <h1>Welcome - <?php echo $_SESSION["name"];?></h1>
-     <a href="logout.php">Logout</a>
     </div>
    </div>
    <?php
